@@ -1,0 +1,14 @@
+name: Notify on Expo CHANGELOG Update
+
+on:
+  push:
+    paths:
+      - 'packages/expo/CHANGELOG.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Notification
+        run: |
+          echo "Expo CHANGELOG.md has been updated!" | mail -s "Changelog Update" julian.diggle@mixcloud.com
